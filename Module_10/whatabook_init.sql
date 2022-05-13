@@ -138,3 +138,15 @@ INSERT INTO wishlist(user_id, book_id)
         (SELECT user_id FROM user WHERE first_name = 'Frodo'),
         (SELECT book_id FROM book WHERE book_name = 'The Return of the King')
     );
+
+/*
+    insert column for hours to the store table
+*/
+
+ALTER TABLE store ADD COLUMN hours VARCHAR(100) NOT NULL;
+
+/* 
+     add hours to store ID 1
+*/
+
+UPDATE store SET hours = 'Mon-Fri, 8:00 AM - 8:00 PM' WHERE store_id = 1;
