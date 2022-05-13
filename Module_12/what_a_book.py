@@ -54,7 +54,7 @@ def show_books(_cursor):
 
 # define method to show locations
 def show_locations(_cursor):
-	_cursor.execute("SELECT store_id, locale from store")
+	_cursor.execute("SELECT store_id, locale, hours from store")
 
 	# get results from cursor object
 	locations = _cursor.fetchall()
@@ -64,7 +64,7 @@ def show_locations(_cursor):
 
 	# for loop to iterate over the location data set and display the results
 	for location in locations:
-		print("     Locale: {}\n".format(location[1]))
+		print("     Store_ID:{}\n     Locale: {}\n     Hours: {}\n\n".format(location[0], location[1], location[2]))
 
 # define method to validate user ID
 def validate_user():
