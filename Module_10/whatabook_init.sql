@@ -5,6 +5,15 @@
     Description: WhatABook database initialization script.
 */
 
+-- show databases
+SHOW DATABASES;
+
+-- create whatabook database
+CREATE DATABASE whatabook;
+
+-- activate database
+USE whatabook;
+
 -- drop test user if exists 
 DROP USER IF EXISTS 'whatabook_user'@'localhost';
 
