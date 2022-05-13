@@ -1,5 +1,5 @@
 /*
-    Title: whatabook.init.sql
+    Title: whatabook_init.sql
     Name: Alynna Rem
     Date: 8 May 2022
     Description: WhatABook database initialization script.
