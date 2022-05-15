@@ -186,16 +186,23 @@ try:
 					# display books excluded from user's wishlist
 					show_books_to_add(cursor, my_user_id)
 
-					# get the entered book_id
-					book_id = int(input("\n   Enter the Book ID of the book you want to add: "))
+					try: 
 
-					# call the add_book_to_wishlist method and add the book to the user's wishlist
-					add_book_to_wishlist(cursor, my_user_id, book_id)
+					    # get the entered book_id
+					    book_id = int(input('\n   Enter the Book ID of the book you want to add or "exit" to exit the program: '))
 
-					# commit the changes to the database
-					db.commit()
+					    # call the add_book_to_wishlist method and add the book to the user's wishlist
+					    add_book_to_wishlist(cursor, my_user_id, book_id)
 
-					print("\n     Book ID: {} was added to your wishlist!".format(book_id))
+					    # commit the changes to the database
+					    db.commit()
+
+					    print("\n     Book ID: {} was added to your wishlist!".format(book_id))
+
+					except ValueError:
+
+						print("\n   Program terminated...")
+						sys.exit(0)
 
 				# if the selected option is invalid (less than 0 or greater than 3), display error
 				if account_menu_option < 0 or account_menu_option > 3:
